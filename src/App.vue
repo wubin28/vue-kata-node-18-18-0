@@ -12,7 +12,10 @@ const todos = ref([
 ])
 
 function addTodo() {
-  // ...
+  todos.value.push({
+    id: id++,
+    text: newTodo.value
+  })
   newTodo.value = ''
 }
 
@@ -22,7 +25,8 @@ interface Todo {
 }
 
 function removeTodo(todo: Todo) {
-  // ...
+  // or todos.value.splice(todos.value.indexOf(todo), 1)
+  todos.value = todos.value.filter(t => t.id !== todo.id)
 }
 </script>
 
