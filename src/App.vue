@@ -1,7 +1,14 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import {onMounted, ref} from 'vue'
 
-const pElementRef = ref(null)
+const pElementRef = ref<HTMLParagraphElement | null>(null)
+
+onMounted(() => {
+  console.log(pElementRef.value)
+  if (pElementRef.value) {
+    pElementRef.value.textContent = 'mounted!'
+  }
+})
 </script>
 
 <template>
