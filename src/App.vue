@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
+const pElementRef = ref(null)
 </script>
 
 <template>
-  <h1>Hello World!</h1>
+  <p ref="pElementRef">hello</p>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
