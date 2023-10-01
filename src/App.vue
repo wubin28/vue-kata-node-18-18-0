@@ -1,9 +1,23 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
+const todoId = ref(1)
+const todoData = ref(null)
+
+async function fetchData() {
+  todoData.value = null
+  const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${todoId.value}`)
+  todoData.value = await res.json()
+}
+
+fetchData()
 </script>
 
 <template>
-  <h1>Hello World!</h1>
+  <p>Todo id: {{ todoId }}</p>
+  <button @click="todoId++">Fetch next todo</button>
+  <p v-if="!todoData">Loading...</p>
+  <pre v-else>{{ todoData }}</pre>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
