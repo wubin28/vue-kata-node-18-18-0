@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import ChildComponent from '@/components/ChildComponent.vue'
+
+const greeting = ref('Hello from parent')
 </script>
 
 <template>
-  <h1>Hello World!</h1>
+  <ChildComponent />
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
