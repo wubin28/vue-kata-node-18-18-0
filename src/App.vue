@@ -6,7 +6,7 @@ const greeting = ref('Hello from parent')
 </script>
 
 <template>
-  <ChildComponent />
+  <ChildComponent :msg="greeting" />
 </template>
 
 <style scoped></style>
