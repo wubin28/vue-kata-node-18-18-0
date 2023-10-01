@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <!-- render child component -->
+  <h2>A Child Component!</h2>
 </template>
 
 <style scoped></style>
