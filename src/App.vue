@@ -6,7 +6,9 @@ const msg = ref('from parent')
 </script>
 
 <template>
-  <ChildComponent></ChildComponent>
+  <ChildComponent>
+    Slot content {{ msg }}
+  </ChildComponent>
 </template>
 
 <style scoped>
