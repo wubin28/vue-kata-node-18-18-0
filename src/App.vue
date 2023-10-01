@@ -6,7 +6,7 @@ const childMsg = ref('No child msg yet')
 </script>
 
 <template>
-  <ChildComponent />
+  <ChildComponent @response="(msg) => childMsg = msg" />
   <p>{{ childMsg }}</p>
 </template>
 
